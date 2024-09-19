@@ -63,53 +63,20 @@ class BalanceTree {
     // this should be the constructed left end or mid tree or null
     return node;
   }
-//   setting up the path to display the tree
-inorderPathway(node){
-    if(node !==null){
-        this.inorderPathway(node.left);
-        this.log(node.name);
-        this.inorderPathway(node.right);
+
+  // setting up the path to display the tree
+  inorderPathway(node, result = []) {
+    if (node !== null) {
+      this.inorderPathway(node.left, result);
+      result.push(node.name);
+      this.inorderPathway(node.right, result);
     }
-    console.log('waffle house')
+    return result;
+  }
+
+  removeNode(name) {
+    this.nodes = this.nodes.filter(node => node !== name);
+  }
 }
-}
 
-// msake teams with path way
-// add hokage and leaders
-const teams = new BalanceTree();
-teams.addNode('Hokage');
-teams.addNode('Kakashi');
-teams.addNode('Kurenai');
-teams.addNode('Asuma');
-teams.addNode('Guy');
-
-// how this works display tree in alphabeitcal order 
-console.log('put my shit straight')
-teams.inorderPathway(teams.root)
-
-//*******************************************
-
-// this is how the root is established and pointed to
-// class TheVillage {
-//   constructor() {
-//     this.root = null;
-//   }
-//   // method to insert Hokage as the root
-//   insertHokage(hokage) {
-//     // this should be inserted into all empty trees?
-//     if (this.root === null) {
-//       this.root = new TreeNode(hokage);
-//     }
-//   }
-
-//   //now to put the hokage in the village
-//   insertLeader(hokage, leader) {
-//     // attach leader to hokage (parent)
-//     const hokagNode = this.findLeader(this.root, hokage);
-//     // now that hokge which is the parent is know we can
-//     // attach children aka leader
-//     if (hokagNode) {
-//       hokagNode.left = this.insertTeamLead(hokagNode.left, leader);
-//     }
-//   }
-// }
+module.exports = { TreeNode, BalanceTree };

@@ -1,0 +1,23 @@
+{
+  "name": "strangest_BST",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingwithstrangers/strangest_BST.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codingwithstrangers/strangest_BST/issues"
+  },
+  "homepage": "https://github.com/codingwithstrangers/strangest_BST#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
